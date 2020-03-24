@@ -1,122 +1,85 @@
 <!-- 
-    Układ 16:9
-    Ma być podobny (nie pixel w pixel)
-    Ma być responsywny (dostosowoywać się do wysokości przeglądarki)
+Zrób szachownicę na 3 różne sposoby
+- wykorzystująć inline-block dla każdego pola
+- wykorzystująć float dla kązdego pola
+- wykorzystując position:absolute dla każdego pola
 
-    ZŁOTE ZASADY
-    - Zrób tak jak potrafisz i tyle ile potrafisz
-    - Próbuj/testuj/sprawdzaj co by było. Takie próbowanie to najważniejsze cechy programisty
-    - Nie przeskakuj ćwiczenia. 
+W zadaniu 1 zrób inline-block
+
+Dodatkowo wycentruj cały kontener (div z klasą 'board') i określ jego wielkości tak by był on kwadratem, który ma 30% szerokości okna przeglądarki i dodatkowo border: 10px czarny.
+
+Tekst ma być pod szachownicą.
+
  -->
-<!DOCTYPE html>
-<html lang="pl">
+ <!DOCTYPE html>
+ <html lang="en">
+ 
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Szachownica Inline-block</title>
+     <style>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>A dream about old Japan</title>
-
-    <style>
-        * {
+        body{
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
             position: relative;
         }
 
-        div.picture{
-            position: relative;
-            margin-left: auto;
-            margin-right: auto;
-            height: 80vh;
-            background-color: red;
-            transform: translate(0%, 12%);
-            width: calc((16*80vh) / 9);
-            overflow: hidden;
-        }
-
-        div.picture img{
+         h1{
+            position: absolute;
             position: absolute;
             display: block;
-            width: 100%;
+            width: 100vw;
+            text-align: center;
+            top: 75vh;
         }
 
-        div.picture img:nth-child(1){
-            top: 10vh;
+        div.board{
+            position: absolute;
+            width: 30vh;
+            height: 30vh ;
+            border: 10px solid black;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 50%);    
+            font-size: 0;
         }
 
-        div.picture img:nth-child(2){
-            top: 23vh;
+        div.board span{
+            width: 50%;
+            height: 50%;
+            display: inline-block;
         }
 
-        div.picture img:nth-child(3){
-            top: 33vh;
+        div.board span:nth-child(1){
+            background-color: red;
         }
 
-        div.picture img:nth-child(4){
-            top: 29vh;
+        div.board span:nth-child(2){}
+
+        div.board span:nth-child(3){
         }
 
-        div.picture img:nth-child(5){
-            top: 39vh;
+        div.board span:nth-child(4){ 
+            background-color: red;
+           
         }
 
-        div.picture img:nth-child(6){
-            top: 52vh;
-        }
 
-        div.picture img:nth-child(7){
-            width: 10%;
-            top: 5vh;
-            left: 5vw;
-        }
-
-        div.picture img:nth-child(8){
-            width: 21%;
-            top: 11vh;
-            left: -3vw;
-        }
-
-        div.picture img:nth-child(9){
-            width: 38%;
-            top: 8vh;
-            right: 0vw;
-        }
-
-        div.picture img:nth-child(10){
-            width: 38%;
-            top: 15vh;
-            right: 0vw;
-        }
-
-        div.picture img:nth-child(11){
-            width: 6%;
-            top: 49vh;
-            left: 8vw;
-        }
-
-      
-
-
-
-    </style>
-</head>
-
-<body>
-    <div class="picture">
-        <img src="img/japan1.png" alt="">
-        <img src="img/japan2.png" alt="">
-        <img src="img/japan3.png" alt="">
-        <img src="img/japan4.png" alt="">
-        <img src="img/japan5.png" alt="">
-        <img src="img/japan6.png" alt="">
-        <img src="img/japan7.png" alt="">
-        <img src="img/japan8.png" alt="">
-        <img src="img/japan9.png" alt="">
-        <img src="img/japan10.png" alt="">
-        <img src="img/japan11.png" alt="">
-
-    </div>
-</body>
-
-</html>
+     </style>
+ </head>
+ 
+ <body>
+     <div class="board">
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+     </div>
+     <h1>Szachownica "inline-block"</h1>
+ </body>
+ 
+ </html>
