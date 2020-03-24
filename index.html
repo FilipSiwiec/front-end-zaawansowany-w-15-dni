@@ -28,8 +28,44 @@ Tekst ma być pod szachownicą.
             position: relative;
         }
 
-         h1{
+        /* float */
+
+        div.board{
             position: absolute;
+            width: 30vh;
+            height: 30vh ;
+            border: 10px solid black;
+            left: 50vw;
+            top: 50vh;
+            transform: translate(-50%, -50%); 
+        }
+
+        h1{
+            position: absolute;
+            display: block;
+            width: 100vw;
+            text-align: center;
+            top: 75vh;
+        }
+
+        div.board span{
+            width: 50%;
+            height: 50%;
+            float: left;
+        }
+
+        div.board span:nth-child(1),
+        div.board span:nth-child(4){
+            background-color: red;
+        }
+
+
+
+
+
+        /* inline-block */
+
+         /* h1{
             position: absolute;
             display: block;
             width: 100vw;
@@ -42,9 +78,9 @@ Tekst ma być pod szachownicą.
             width: 30vh;
             height: 30vh ;
             border: 10px solid black;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, 50%);    
+            left: 50vw;
+            top: 50vh;
+            transform: translate(-50%, -50%); 
             font-size: 0;
         }
 
@@ -58,15 +94,9 @@ Tekst ma być pod szachownicą.
             background-color: red;
         }
 
-        div.board span:nth-child(2){}
-
-        div.board span:nth-child(3){
-        }
-
         div.board span:nth-child(4){ 
-            background-color: red;
-           
-        }
+            background-color: red;  
+        } */
 
 
      </style>
@@ -79,7 +109,8 @@ Tekst ma być pod szachownicą.
          <span></span>
          <span></span>
      </div>
-     <h1>Szachownica "inline-block"</h1>
+     <!-- <h1>Szachownica "inline-block"</h1> -->
+     <h1>Szachownica "float"</h1>
  </body>
  
  </html>
