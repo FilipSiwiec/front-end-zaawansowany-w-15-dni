@@ -1,46 +1,135 @@
-<!DOCTYPE html>
-<html lang="en">
 <!-- 
-        Inicjalizowane są te właściwości, które nie są określane w wyniku pozostałych punktów, czyli nie są zadeklarowana w żaden sposób.
+    Układ 16:9
+    Ma być podobny (nie pixel w pixel)
+    Ma być responsywny (dostosowoywać się do wysokości przeglądarki)
 
-        1. Wartość inicjalizująca (w wyniku przypisania lub oddziedziczenia dla wartości dziedziczących). Np. wszystkie elementy mają początkowo margin dla każdego kierunku ustawiony na 0. Font-weigt na normal, ale dziedziczą po html. Każdy element inicjalizuje wiele właściwości. 
-
-
-        Dziedziczone są te właściwości, które nie mają precyzyjnych reguł/
-        2. Dziedziczenie właściwości z reguł w stylach przeglądarki.
-        3. Dziedziczenie właściwości z reguł własnych stylów.
-
-        Reguły precyzyjne i ważność.
-        4. Przypisanie stylów precyzyjnych ze stylów przeglądarki. Np. body ma margin 8px. Marginesów do h1-h6 do p. Pogrubienia do strong i b.
-        5. Przypisanie właściwości z reguł precyzyjnych z naszych stylów. Decyzja o ważności.
-
-        Ważne jest również to w jaki sposób została dodana dana reguły (liniowo lub zewnętrzny plik lub w head). Możliwość użycia instrukcji !important
-    -->
+    ZŁOTE ZASADY
+    - Zrób tak jak potrafisz i tyle ile potrafisz
+    - Próbuj/testuj/sprawdzaj co by było. Takie próbowanie to najważniejsze cechy programisty
+    - Nie przeskakuj ćwiczenia. 
+ -->
+<!DOCTYPE html>
+<html lang="pl">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Kaskadowość</title>
+    <title>A dream about old Japan</title>
 
     <style>
-        p {
-            background-color: brown;
-            color: white !important;
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        div.picture {
+            position: relative;
+            width: calc((16 * 80vh) / 9);
+            height: 80vh;
+            margin-left: auto;
+            margin-right: auto;
+            top: 10vh;
+            background-color:rgb(197, 186, 180);
+        }
+
+        div.picture img {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            height: 58vh;
+            object-fit: cover;
+            object-position: 100% -41%;
+            
+        }
+
+        div.picture img:nth-child(2) {
+            height: 58vh;
+            object-fit: cover;
+            object-position: 100% -93%;
+            
+        }
+            
+        div.picture img:nth-child(3) {
+            height: 58vh;
+            object-fit: cover;
+            object-position: 100% -134%;
+        }
+
+        div.picture img:nth-child(4) {
+            height: 58vh;
+            object-fit: cover;
+            object-position: 100% -114%;
+        }
+
+        div.picture img:nth-child(5) {
+            height: 59vh;
+            object-fit: cover;
+            object-position: 100% -56%;
+            bottom: 0;
+        }
+
+        div.picture img:nth-child(6) {
+            height: 59vh;
+            object-fit: cover;
+            object-position: 100% -149%;
+            bottom: 0;
+        }
+
+        div.picture img:nth-child(7) {
+            width: auto;
+            height: 16%;
+            top: 4vh;
+            left: 6%;
+        }
+
+        div.picture img:nth-child(8) {
+            width: 21%;
+            height: 5%;
+            object-position: right;
+            left: 0px;
+            top: 11%;
+        }
+
+        div.picture img:nth-child(9) {
+            width: auto;
+            height: 11%;
+            top: 6vh;
+            right: 0vw;
+        }
+
+        div.picture img:nth-child(10) {
+            width: auto;
+            height: 42%;
+            top: 18vh;
+            right: 0vw;
+        }
+
+        div.picture img:nth-child(11) {
+            width: auto;
+            height: 30%;
+            top: 43vh;
+            left: 6%;
         }
     </style>
-    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1 class="big" id="header">Nagłówek w znaczniku h1<span>a w nim span</span></h1>
-    <p>Jaki margines ma nasze p?
-        <strong>Czy ten strong jest pogrubiony</strong>
-    </p>
-    <section>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, sapiente? Est ducimus quidem non perferendis! Magni
-        sed omnis laudantium vel mollitia, porro illum dolorum optio, dolorem animi tempora reiciendis ullam atque tenetur
-        eligendi odio earum corporis rerum quasi molestiae nemo pariatur. Reprehenderit nobis ratione aperiam. Amet tenetur
-        neque unde! Commodi?</section>
+    <div class="picture">
+        <img src="img/japan1.png" alt="">
+        <img src="img/japan2.png" alt="">
+        <img src="img/japan3.png" alt="">
+        <img src="img/japan4.png" alt="">
+        <img src="img/japan5.png" alt="">
+        <img src="img/japan6.png" alt="">
+        <img src="img/japan7.png" alt="">
+        <img src="img/japan8.png" alt="">
+        <img src="img/japan9.png" alt="">
+        <img src="img/japan10.png" alt="">
+        <img src="img/japan11.png" alt="">
+
+    </div>
 </body>
 
 </html>
