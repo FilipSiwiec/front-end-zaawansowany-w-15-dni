@@ -1,85 +1,48 @@
 body{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    position: relative;
+    /* box-sizing: border-box; */
+    /* position: relative; */
+}
+
+button{
+    position: absolute;
+    display: block;
+    margin: auto;
+    margin-top: 10vh;
+    color: white;
+    background-color: black;
+    padding: 20px;
+    font-size: 30px;
+    border: 5px solid white;
+    margin-left: 50vw;
+    margin-right: 50vw;
+    transform: translate(-50%, -2px);
+    transition: 1s;
     
 }
 
-p{
-    font-size: 30px;
+.square{
+    top: 0;
+    left: 0;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0;
-    opacity: 0;
-    transition: 1s;
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    transition: 1s linear;
 }
 
-.bg{
-    background-color: grey;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    transition: 1s;
+button:hover{
+    background-color: white;
+    color: black;
+    border: 5px solid black;
+    
 }
 
-div.circle{
-    position: absolute;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    display: inline-block;
-    margin: 50px;
-    border: 5px solid white;
-    cursor: pointer;
-}
-
-div.red{
-    top: 10px;
-    left: 10px;
-    background-color: red;
-}
-
-div.green{
-    top: 10px;
-    right: 10px;
-    background-color: green;
-}
-
-div.blue{
-    bottom: 10px;
-    left: 10px;
-    background-color: blue;
-}
-
-div.orange{
-    bottom: 10px;
-    right: 10px;
-    background-color: orange;
-}
-
-div.red:hover~div.bg,
-div.red:hover~div.bg p.red{
-    background-color: red;
-    opacity: 1;
-}
-
-div.blue:hover~div.bg,
-div.blue:hover~div.bg p.blue{
-    background-color: blue;
-    opacity: 1;
-}
-
-div.green:hover~div.bg,
-div.green:hover~div.bg p.green{
-    background-color: green;
-    opacity: 1;
-} 
-
- div.orange:hover~div.bg,
-div.orange:hover~div.bg p.orange{
-    background-color: orange;
-    opacity: 1;
+button:hover+.square{
+    width: 110px;
+    height: 110px;
+    top: calc(100% - 110px );
+    left: calc(100% - 110px );
+    
 }
