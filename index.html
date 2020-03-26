@@ -18,6 +18,23 @@
             margin-top: 90px;
         }
 
+        button::after{
+            content: "";
+            position: absolute;
+            display: block;
+            height: 5px;
+            transition: .4s;
+            width: 0;
+            background-color: black;
+            margin-top: 10px;
+        }
+
+        button:hover::after{
+            width: 77%;
+        }
+
+
+/* 
         span {
             position: absolute;
             display: block;
@@ -30,13 +47,13 @@
 
         button:hover span{
             width: calc(100% - 30px);
-        }
+        } */
 
     </style>
 </head>
 
 <body>
-    <button>przycisk!<span></span></button>
+    <button>przycisk!</button>
 </body>
 
 </html>
