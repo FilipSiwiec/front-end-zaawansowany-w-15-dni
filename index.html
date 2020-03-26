@@ -7,47 +7,36 @@
     <title>Document</title>
 
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        button {
+            position: relative;
+            background-color: white;
+            font-size: 25px;
+            padding: 15px;
+            display: block;
+            border: none;
+            margin: auto;
+            margin-top: 90px;
         }
 
-        .zegar {
+        span {
             position: absolute;
-            background-color: red;
-            width: 50vh;
-            height: 50vh;
-            border-radius: 50%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .wskazowka {
+            display: block;
+            height: 5px;
+            transition: .4s;
+            width: 0;
             background-color: black;
-            margin-top: 5%;
-            height: 45%;
-            width: 10px;
-            border-radius: 50%;
-            margin-left: 50%;
-            transform-origin: 0% 100%;
-            transition: 60s linear;
-            transform: rotate(0deg) translate(-50%, 0%);
+            margin-top: 10px;
         }
 
-        .zegar:hover .wskazowka{
-            transform: rotate(360deg);
+        button:hover span{
+            width: calc(100% - 30px);
         }
 
     </style>
 </head>
 
 <body>
-    <div class="zegar">
-        <div class="wskazowka"></div>
-    </div>
-
+    <button>przycisk!<span></span></button>
 </body>
 
 </html>
