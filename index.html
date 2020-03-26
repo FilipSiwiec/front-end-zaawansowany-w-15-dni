@@ -3,137 +3,51 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Domek</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
     <style>
         body {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            height: 100vh;
-            overflow: hidden;
         }
 
-        div:nth-of-type(1),
-        div:nth-of-type(2),
-        div:nth-of-type(3),
-        div:nth-of-type(4),
-        div:nth-of-type(5),
-        div:nth-of-type(6) {
+        .zegar {
             position: absolute;
-            top: 100vh;
-            left: 0;
-            height: 0;
-            width: 0;
-            transform: translate(0%, -100%);
-            transition: 2s;
+            background-color: red;
+            width: 50vh;
+            height: 50vh;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
-        div:nth-of-type(1) {
-            z-index: 1;
-        }
-        
-        div:nth-of-type(2){
-            transition: linear .9s;
-        }
-
-        div:nth-of-type(3){
-            transition: ease-out 1.3s;
-        }
-
-        div:nth-of-type(4){
-            transition: linear 1.5s;
-        }
-
-        div:nth-of-type(5){
-            transition: linear 0.9s;
-        }
-
-        div:nth-of-type(6){
-            transition: ease-out 1.6s;
-        }
-
-        span {
-            top: 20px;
-            left: 20px;
-            position: absolute;
-            display: block;
-            font-size: 20px;
-            padding: 10px;
-            background-color: brown;
-            width: 130px;
-            text-align: center;
-        }
-
-        span:hover~div:nth-of-type(1) {
-            position: absolute;
-            width: 356px;
-            height: 192px;
-            background-color: brown;
-            top: 50vh;
-            left: 53vw;
-        }
-
-        span:hover~div:nth-of-type(2) {
-            position: absolute;
-            width: 252px;
-            height: 252px;
+        .wskazowka {
             background-color: black;
-            top: 63px;
-            left: 696px;
-            transform: rotate(45deg);
+            margin-top: 5%;
+            height: 45%;
+            width: 10px;
+            border-radius: 50%;
+            margin-left: 50%;
+            transform-origin: 0% 100%;
+            transition: 60s linear;
+            transform: rotate(0deg) translate(-50%, 0%);
         }
 
-        span:hover~div:nth-of-type(3) {
-            position: absolute;
-            width: 50px;
-            height: 100px;
-            background-color: blue;
-            top: 153px;
-            left: 884px;
-            z-index: -1;
+        .zegar:hover .wskazowka{
+            transform: rotate(360deg);
         }
 
-        span:hover~div:nth-of-type(4) {
-            position: absolute;
-            width: 50px;
-            height: 100px;
-            background-color: yellow;
-            top: 380px;
-            left: 793px;
-            z-index: 1;
-        }
-
-        span:hover~div:nth-of-type(5) {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            background-color: yellow;
-            top: 270px;
-            left: 693px;
-            z-index: 1;
-        }
-
-        span:hover~div:nth-of-type(6) {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            background-color: yellow;
-            top: 270px;
-            left: 899px;
-            z-index: 1;
-        }
     </style>
-
 </head>
 
 <body>
-    <span>BUDUJEMY</span>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+    <div class="zegar">
+        <div class="wskazowka"></div>
+    </div>
+
 </body>
 
 </html>
