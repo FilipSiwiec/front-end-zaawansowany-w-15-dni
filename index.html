@@ -3,40 +3,137 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Zadanie - kwadrat i linia - wyśrodkowanie</title>
+    <title>Domek</title>
     <style>
         body {
             margin: 0;
-            height: 200vh;
-            
+            padding: 0;
+            box-sizing: border-box;
+            height: 100vh;
+            overflow: hidden;
         }
 
-        .rect {
+        div:nth-of-type(1),
+        div:nth-of-type(2),
+        div:nth-of-type(3),
+        div:nth-of-type(4),
+        div:nth-of-type(5),
+        div:nth-of-type(6) {
             position: absolute;
-            width: 10vw;
-            height: 10vw;
-            border: 2px solid black;
-            background-color: white;
-            transform: translate(-50%, -50%) rotate(45deg);
             top: 100vh;
-            left: 50vw;
-                }
+            left: 0;
+            height: 0;
+            width: 0;
+            transform: translate(0%, -100%);
+            transition: 2s;
+        }
 
-        .line {
+        div:nth-of-type(1) {
+            z-index: 1;
+        }
+        
+        div:nth-of-type(2){
+            transition: linear .9s;
+        }
+
+        div:nth-of-type(3){
+            transition: ease-out 1.3s;
+        }
+
+        div:nth-of-type(4){
+            transition: linear 1.5s;
+        }
+
+        div:nth-of-type(5){
+            transition: linear 0.9s;
+        }
+
+        div:nth-of-type(6){
+            transition: ease-out 1.6s;
+        }
+
+        span {
+            top: 20px;
+            left: 20px;
             position: absolute;
-            border-top: 8px dashed black;
-            top: 100vh;
-            padding-left: 100vw;
-            transform: translate(0, -50%);
+            display: block;
+            font-size: 20px;
+            padding: 10px;
+            background-color: brown;
+            width: 130px;
+            text-align: center;
+        }
+
+        span:hover~div:nth-of-type(1) {
+            position: absolute;
+            width: 356px;
+            height: 192px;
+            background-color: brown;
+            top: 50vh;
+            left: 53vw;
+        }
+
+        span:hover~div:nth-of-type(2) {
+            position: absolute;
+            width: 252px;
+            height: 252px;
+            background-color: black;
+            top: 63px;
+            left: 696px;
+            transform: rotate(45deg);
+        }
+
+        span:hover~div:nth-of-type(3) {
+            position: absolute;
+            width: 50px;
+            height: 100px;
+            background-color: blue;
+            top: 153px;
+            left: 884px;
+            z-index: -1;
+        }
+
+        span:hover~div:nth-of-type(4) {
+            position: absolute;
+            width: 50px;
+            height: 100px;
+            background-color: yellow;
+            top: 380px;
+            left: 793px;
+            z-index: 1;
+        }
+
+        span:hover~div:nth-of-type(5) {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: yellow;
+            top: 270px;
+            left: 693px;
+            z-index: 1;
+        }
+
+        span:hover~div:nth-of-type(6) {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: yellow;
+            top: 270px;
+            left: 899px;
+            z-index: 1;
         }
     </style>
+
 </head>
 
 <body>
-    <div class="rect"></div>
-    <div class="line"></div>
+    <span>BUDUJEMY</span>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
 </body>
 
 </html>
