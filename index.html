@@ -9,45 +9,39 @@
     <style>
         button {
             position: relative;
-            background-color: white;
+            background-color: transparent;
             font-size: 25px;
             padding: 15px;
             display: block;
             border: none;
             margin: auto;
             margin-top: 90px;
+            border: 2px solid black;
+            border-radius: 25px;
+            box-shadow: 0 0 0 2px white, 0 0 0 4px black;
+            overflow: hidden;
+            transition: 0.3s;
         }
 
-        button::after{
+        button::after {
             content: "";
-            position: absolute;
-            display: block;
-            height: 5px;
-            transition: .4s;
             width: 0;
-            background-color: black;
-            margin-top: 10px;
-        }
-
-        button:hover::after{
-            width: 77%;
-        }
-
-
-/* 
-        span {
+            height: 100%;
             position: absolute;
-            display: block;
-            height: 5px;
-            transition: .4s;
-            width: 0;
+            bottom: 0;
+            left: 0;
             background-color: black;
-            margin-top: 10px;
+            transition: .3s;
+            z-index: -1;
         }
 
-        button:hover span{
-            width: calc(100% - 30px);
-        } */
+        button:hover::after {
+            width: 100%;
+        }
+
+        button:hover{
+            color: white;
+        }
 
     </style>
 </head>
