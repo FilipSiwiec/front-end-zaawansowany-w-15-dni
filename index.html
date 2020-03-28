@@ -5,54 +5,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Przycisk 2</title>
     <style>
-
-        body{
+        * {
             margin: 0;
             padding: 0;
-            box-sizing: content-box;
         }
+
         button {
-            font-size: 40px;
-        }
-
-        h1 {
             position: absolute;
-            font-family: arial;
-            font-size: 80px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            transition: 0.5s;
-            margin: 0;
-            border: 0px solid black;
-        }
-
-        button.larger:hover~h1{
-            font-size: 160px;
-        }
-
-        button.smaller:hover~h1{
+            bottom: 15vh;
+            right: 15vw;
+            border: 2px solid black;
+            width: 360px;
+            height: 100px;
+            background-color: #fff;
             font-size: 40px;
+            text-transform: uppercase;
+            font-family: roboto condensed;
+            overflow: hidden;
+            cursor: pointer;
         }
 
-        button.border:hover~h1{
-            border: 20px solid black;
+        button span {
+            display: inline-block;
+            line-height: 100px;
+            position: relative;
+            top: 0;
+            transition: .4s linear;
         }
 
+        button span:nth-child(2){
+            top: -100px;
+            left: 100%;
+        }
+
+        button:hover span{
+            /* left: 0px; */
+            transform: translateX(-350px);
+        }
+        /* button:hover span {
+   top: -100px;
+  } */
     </style>
 </head>
 
 <body>
-
-
-    <button class="larger">2xWiększy</button>
-    <button class="smaller">2xMniejszy</button>
-    <button class="border">Obramowanie</button>
-    <h1>Nazwa</h1>
-
-
+    <button><span>Kup teraz</span><span>Super okazja!</span></button>
 </body>
 
 </html>
