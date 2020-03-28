@@ -1,57 +1,80 @@
+<!-- Animacja trwa 1 sekundę z wyjątkiem ostatniego elementu w którym trwa 3 sekund (ta sama animacja, ale dłuższa) -->
+<!-- ostatni element ma odwrócony kierunek (reverse) -->
+<!-- Kolory elementów: lewy górny róg: czarny, prawy górny róg: czerwony, prawy dolny róg: zielony i lewy dolny róg: niebieski -->
+<!-- Zrób tylko jedną animację (keyframes) -->
+<!-- Opóźnienie .2s (kaażdy kolejny element) -->
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Przycisk 2</title>
+    <title>Document</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        button {
+        div {
+            height: 30px;
+            width: 30px;
+            background-color: black;
             position: absolute;
-            bottom: 15vh;
-            right: 15vw;
-            border: 2px solid black;
-            width: 360px;
-            height: 100px;
-            background-color: #fff;
-            font-size: 40px;
-            text-transform: uppercase;
-            font-family: roboto condensed;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        button span {
-            display: inline-block;
-            line-height: 100px;
-            position: relative;
             top: 0;
-            transition: .4s linear;
+            left: 0;
+            animation: disco 1s infinite;
         }
 
-        button span:nth-child(2){
-            top: -100px;
-            left: 100%;
+        div:nth-child(2) {
+            animation-delay: 0.2s;
         }
 
-        button:hover span{
-            /* left: 0px; */
-            transform: translateX(-350px);
+        div:nth-child(3) {
+            animation-delay: 0.4s;
         }
-        /* button:hover span {
-   top: -100px;
-  } */
+
+        div:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        div:nth-child(5) {
+            animation-delay: 0.8s;
+        }
+
+        div:nth-child(6) {
+            animation: disco 3s reverse infinite;
+        }
+
+        @keyframes disco {
+            0% {}
+
+            25% {
+                top: 0;
+                left: calc(100% - 30px);
+                background-color: red;
+            }
+
+            50% {
+                top: calc(100% - 30px);
+                left: calc(100% - 30px);
+                background-color: green;
+            }
+
+            75% {
+                top: calc(100% - 30px);
+                left: 0;
+                background-color: blue;
+            }
+
+            100% {}
+        }
     </style>
 </head>
 
 <body>
-    <button><span>Kup teraz</span><span>Super okazja!</span></button>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
 </body>
 
 </html>
