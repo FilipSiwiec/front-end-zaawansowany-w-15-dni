@@ -1,56 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="fontawesome-free-5.13.0-web/css/all.css" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
     <style>
-        .bell{
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .arrow {
             position: fixed;
-            bottom: 50px;
-            right: 50px;
-            height: 80px;
-            width: 80px;
+            bottom: 40px;
+            height: 100px;
+            width: 100px;
+            background-color: blue;
             border-radius: 50%;
-            border: 5px solid cadetblue; 
-            color: cadetblue;
-            line-height: 80px;
-            font-size: 45px;
-             text-align: center;
-        }
-
-        .bell i{
-            animation: move linear 2s infinite alternate;
-            transform-origin: 50% 0;
-        }
-
-        .bell:hover{
-            background-color: cadetblue;
-        }
-
-        .bell:hover i{
             color: white;
+            left: calc(50% - 50px);
         }
 
-        @keyframes move{
-            50%{
-                transform: rotate(30deg);
-            }
-
-            100%{
-                transform: rotate(-30deg);
-            }
+        .arrow i {
+            font-size: 60px;
+            line-height: 100px;
+            text-align: center;
+            text-shadow: 0 -20px, 0 -40px;
+            animation: anim 1s infinite linear;
+            transform: translateY(-63%);
         }
 
+        @keyframes anim{
+         100%{
+             transform: translateY(100%);
+         }
+     }
     </style>
 </head>
+
 <body>
 
-    <div class="bell">
-        <i class="fas fa-bell"></i>
-    </div>
-    
+    <button class="arrow">
+        <i class="fas fa-angle-down"></i>
+
+    </button>
 </body>
+
 </html>
