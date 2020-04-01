@@ -1,45 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    
+</head>
     <style>
-        body {
+        body{
             margin: 0;
             padding: 0;
-            box-sizing: content-box;
         }
 
-        img {
+        section{
             position: absolute;
-            width: 100%;
-            opacity: 1;
+            left: 0;
+            top: 20px;
+            width: 256px;
+            height: 314px;
+            animation-direction: ;
+            background-image: url("./img/walking.png");
+            animation: anim 1s infinite steps(8),
+                       walk 8s infinite linear alternate,
+                       drugi 16s infinite linear ;
         }
 
-        img:nth-child(1){
-            animation: animacja 1s infinite alternate;
-        }
-
-        img:nth-child(2){
-            animation: animacja 1s 1s infinite alternate;
-        }
-
-        @keyframes animacja{
-            0% {}
-            100% {
-                opacity: 0;
+        @keyframes anim{
+            100%{
+                background-position: -2048px;
             }
         }
 
+        @keyframes walk{
+            100%{
+                left: calc(100% - 256px)
+            }
+        }
+
+        @keyframes drugi {
+            50%{
+                transform: rotateY(0deg);
+            }
+            
+            50.001%{
+                transform: rotateY(180deg);
+            }
+
+            100%{
+                transform: rotateY(180deg);
+            }
+        }
     </style>
-</head>
 
 <body>
-    <img src="./img/img1.jpg" alt="">
-    <img src="./img/img2.jpg" alt="">
-</body>
 
+    <section></section>
+    
+</body>
 </html>
