@@ -1,65 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            list-style: none;
-            text-decoration: none;
         }
 
-        ul{
+        body {
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            height: 100vh;
             display: flex;
+            flex-direction: column;
             
         }
 
-        ul li{
-            flex-basis: 100%;
-            background-color: #444;
-            margin: 10px;
-            transition: 0.4s;
-        }
-
-        ul li a{
-            display: block;
-            color: white;
-            padding: 15px;
-            text-align: center;
-            
-        }
-
-        ul li:hover{
+        nav {
             background-color: black;
+            color: white;
+            flex-basis: 10vh;
+            line-height: 10vh;
+            padding-left: 20px;
         }
 
-        @media (max-width: 583px){
-            ul{
-                flex-direction: column;
-            }
-
-            ul li {
-                margin: 0;
-            }
+        header{
+            flex-basis: 30vh;
+            background-color: grey;
+            max-width: 1200px;
+            align-self: center;
+            width: 100%;
+            padding: 20px;
         }
 
+        section{
+            display: flex;
+            flex-direction: row;
+            max-width: 1200px;
+            width: 100%;
+            align-self: center;
+            height: 100%;
+        }
 
+        section main{
+            background-color: teal;
+            flex-basis: 70%;
+        }
+        section aside{
+            background-color: red;
+            flex-basis: 300px;
+        }
+
+        footer{
+            background-color: black;
+            color: white;
+            flex-basis: 10vh;
+            line-height: 10vh;
+            padding-left: 20px;
+
+        }
     </style>
 </head>
+
 <body>
-    <nav>
-        <ul>
-            <li><a href="#">przycisk 1</a></li>
-            <li><a href="#">przycisk 2</a></li>
-            <li><a href="#">przycisk 3</a></li>
-            <li><a href="#">przycisk 4</a></li>
-            <li><a href="#">przycisk 5</a></li>
-        </ul>
-    </nav>
+    <nav>nawigacja</nav>
+    <header>header</header>
+    <section>
+        <main>glowna</main>
+        <aside>lewa</aside>
+    </section>
+    <footer>footer</footer>
 </body>
+
 </html>
