@@ -5,45 +5,44 @@
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <meta http-equiv="X-UA-Compatible" content="ie=edge">
- <title>Kolory Kliknięcie</title>
+ <title>Powiększ</title>
  <style>
-  body {
-   display: flex;
-   margin: 0;
+  button {
+   padding: 10px;
+   font-size: 50px;
+   font-family: sans-serif;
+   background-color: transparent;
+   border: 2px solid black;
   }
 
-  .s1,
-  .s2 {
-   flex-basis: 50%;
-   height: 100vh;
-   transition: .5s;
-  }
-
-  .red {
-   background-color: red;
+  .square {
+   width: 100px;
+   height: 100px;
+   background-color: #000;
+   position: fixed;
+   top: calc(50% - 50px);
+   left: calc(50% - 50px);
+   /* transform: rotate(); */
   }
  </style>
 </head>
 
 <body>
- <div class="s1 red"></div>
- <div class="s2"></div>
+ <button>Obróc</button>
+ <div class="square"></div>
+
  
-<script src="start.js"></script>
- <!-- <script>
-  var firstDiv = document.querySelector('.s1');
-  var secondDiv = document.querySelector('.s2');
+  <!-- // parametry główne. Za pomocą zmiennych stwórz początkową wartość rotate (zero) i wartość o którą będziesz zmieniał stopnie (o 10 stopnii).
 
-  function changeColor() {
-   // firstDiv.classList.toggle('red');
-   // secondDiv.classList.toggle('red');
-   this.classList.toggle('red');
 
-  }
+  // pobieramy elementy - pobierz przycisk i div
 
-  firstDiv.addEventListener('click', changeColor);
-  secondDiv.addEventListener('click', changeColor);
- </script> -->
+
+  // podpinamy nasłuchiwanie i umeiszczamy w nim funkcje anonimową. Pamiętaj zmieniamy własciwość transform. Za każdym razie obrót zwiększa się od 10 deg. 
+
+
+  //Bonus dodaj właściwość transition dla div określoną na .5s. -->
+  <script src="start.js"></script>
 </body>
 
 </html>
