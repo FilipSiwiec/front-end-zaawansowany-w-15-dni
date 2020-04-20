@@ -1,18 +1,10 @@
-
-let guzik = document.querySelector('button');
-let kwadrat = document.querySelector(".square");
+let guzik = document.querySelector(".js");
 
 
-let obrot = 0;
-let zmienna = 10;
-kwadrat.style.transform = 'rotate(' + obrot + 'deg)';
-kwadrat.style.transition = "0.5s"
-
-let obracamy = function (){
-    
-    obrot += zmienna;
-    kwadrat.style.transform = 'rotate(' + obrot + 'deg)';
-    console.log(obrot);
+let dzialanie = function () {
+    let divik = document.createElement("div");
+    document.body.appendChild(divik);
+    divik.classList.add("box");
 }
 
-guzik.addEventListener("click", obracamy);
+guzik.addEventListener("click", dzialanie);
