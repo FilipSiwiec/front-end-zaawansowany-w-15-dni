@@ -1,23 +1,11 @@
-const dodaj = document.querySelector('button.bigger');
-const odejm = document.querySelector('button.smaller');
-let par = document.querySelector("p");
+let pierwszy = document.querySelector(".s1");
+let drugi = document.querySelector(".s2");
 
-let textSize = 16;
-par.style.fontSize = textSize + "px";
-
-
-let dodajemy = function (){
-    textSize++;
-    par.style.fontSize = textSize + "px";
+let funkcja = function(){
+    
+    pierwszy.classList.toggle('red');
+    drugi.classList.toggle("red")
+    console.log(this);
 }
 
-let odejmujemy = function (){
-    textSize--;
-    par.style.fontSize = textSize + "px";
-}
-
-dodaj.addEventListener("click", dodajemy);
-odejm.addEventListener("click", odejmujemy);
-
-
-
+pierwszy.addEventListener("click", funkcja);
