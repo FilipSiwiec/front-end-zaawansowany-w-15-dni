@@ -1,37 +1,35 @@
-body{
-    margin: 0;
-    padding: 0;
-}
-
-.burger{
+.burger {
     position: absolute;
     top: 40px;
     right: 40px;
-    border-radius: 50%;
-    border: 3px solid black;
-    height: 50px;
-    width: 50px;
+    font-size: 40px;
     line-height: 50px;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 50px;
-    transition: 0.3s linear;
+    transition: .3s linear;
 }
 
 .burger:hover {
-    transform: rotate(405deg);
     cursor: pointer;
 }
 
-.burger:hover + aside{
-    left: 0px;
+aside {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -300px;
+    width: 300px;
+    background-color: #000;
+    transition: .3s linear;
 }
 
-aside{
-    position: absolute;
-    background-color: black;
-    width: 300px;
-    height: 100vh;
-    left: -300px;
-    transition: 0.3s linear;
+i.fas{
+    display: none;
 }
+
+i.show{
+    display: block;
+}
+
+.left{
+    left: 0;
+}
+
