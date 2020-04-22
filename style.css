@@ -24,12 +24,14 @@ aside {
 i.fas{
     display: none;
 }
-
 i.show{
     display: block;
+   
 }
 
-.left{
+aside.show{
     left: 0;
 }
+
+
 
