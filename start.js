@@ -1,9 +1,24 @@
-const burger = document.querySelector(".burger");
-const nav = document.querySelector("nav");
+// jquery
 
-burger.addEventListener("click", function(){
+// $("button, .hide").on("click", function(){
+//     console.log("dziala");
+//     $(".modal-wrap, .article").toggleClass("active");
+// })
+
+// JavaScript
+
+const button = document.querySelector("button");
+const Xik = document.querySelector(".hide");
+
+button.addEventListener("click", function(){
+    // console.log("dziala");
+    document.querySelector(".modal-wrap").classList.toggle("active");
+    document.querySelector(".article").classList.toggle("active");
+})
+
+Xik.addEventListener("click", function(){
     console.log("dziala");
-    burger.classList.toggle("on");
-    nav.classList.toggle("on");
-
+    document.querySelector(".modal-wrap").classList.toggle("active");
+    document.querySelector(".article").classList.toggle("active");
+    
 })
