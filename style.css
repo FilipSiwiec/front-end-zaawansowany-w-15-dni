@@ -1,45 +1,45 @@
-.burger {
-    position: absolute;
+body{
+    margin: 0;
+    padding: 0;
+    height: 200vh;
+}
+
+.burger{
+    position: fixed;
     top: 40px;
     right: 40px;
-    font-size: 40px;
-    line-height: 50px;
-    transition: .3s linear;
+    font-size: 50px;
+    z-index: 1;
+    transition: .3s;
 }
 
-.burger:hover {
-    cursor: pointer;
+.wrapper{
+    line-height: 200%;
+    margin: 10px 70px;
 }
 
-aside {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: -300px;
-    width: 300px;
-    background-color: #000;
-    transition: .3s linear;
+nav{
+    background-color: black;
+    width: 100%;
+    height: 300px;
+    position: fixed;
+    top: -300px;
+    transition: .3s;
+}
+
+i.fas.show{
+    display: block;
 }
 
 i.fas{
     display: none;
 }
-i.show{
-    display: block;
-   
+
+nav.show{
+    top: 0px;
 }
 
-aside.show{
-    left: 0;
-}
-
-.wrapper{
-    margin: 10px 80px;
-    transition: .3s linear;
-}
-
-.wrapper.show{
-    padding-left: 300px;
-    
+i.fas.fa-angle-up.show{
+    color: white;
 }
 
