@@ -1,45 +1,45 @@
 body{
     margin: 0;
     padding: 0;
-    height: 200vh;
-}
-
-.burger{
-    position: fixed;
-    top: 40px;
-    right: 40px;
-    font-size: 50px;
-    z-index: 1;
-    transition: .3s;
+    min-height: 150vh;
 }
 
 .wrapper{
-    line-height: 200%;
-    margin: 10px 70px;
+    padding: 20px 70px;
 }
 
-nav{
-    background-color: black;
-    width: 100%;
-    height: 300px;
+.burger{
+    font-size: 35px;
     position: fixed;
-    top: -300px;
-    transition: .3s;
-}
-
-i.fas.show{
-    display: block;
+    right: 40px;
+    bottom: 40px;
+    transition: .4s;
 }
 
 i.fas{
-    display: none;
-}
-
-nav.show{
-    top: 0px;
-}
-
-i.fas.fa-angle-up.show{
+    border-radius: 50%;
+    background-color: black;
     color: white;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
 }
 
+nav{
+    width: 100%;
+    background-color: black;
+    height: 30px;
+    position: fixed;
+    bottom: 0;
+    transition: .4s;
+}
+
+nav.on{
+    height: 300px;
+}
+
+.burger.on{
+    bottom: 310px;
+    transform: rotate(180deg);
+}
