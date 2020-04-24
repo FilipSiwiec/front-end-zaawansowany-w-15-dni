@@ -1,24 +1,15 @@
-// jquery
-
-// $("button, .hide").on("click", function(){
+// $(".me").on("click", function(){
 //     console.log("dziala");
-//     $(".modal-wrap, .article").toggleClass("active");
+//     $("body, html").animate({
+//         scrollTop: $(".s1").offset().top
+//     },500)
 // })
 
-// JavaScript
+$("nav a").on("click", function(){
+    // console.log($(this).attr("class"))
+    const to = "#" + $(this).attr("class");
+    $("body, html").animate({
+        scrollTop: $(to).offset().top
+    },500)
 
-const button = document.querySelector("button");
-const Xik = document.querySelector(".hide");
-
-button.addEventListener("click", function(){
-    // console.log("dziala");
-    document.querySelector(".modal-wrap").classList.toggle("active");
-    document.querySelector(".article").classList.toggle("active");
-})
-
-Xik.addEventListener("click", function(){
-    console.log("dziala");
-    document.querySelector(".modal-wrap").classList.toggle("active");
-    document.querySelector(".article").classList.toggle("active");
-    
 })
