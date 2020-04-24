@@ -2,36 +2,85 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+ <meta charset="UTF-8">
+ <title>Skrolowanie - efekt w JQ</title>
+ <style>
+  * {
+   margin: 0;
+   padding: 0;
+  }
+
+
+  .sekcja1 {
+   background-color: rgb(32, 139, 143);
+   height: 100vh;
+  }
+
+  .sekcja2 {
+   background-color: rgb(10, 34, 10);
+   height: 500px;
+
+  }
+
+  .sekcja3 {
+   background-color: rgb(167, 46, 106);
+   height: 1290px;
+  }
+
+  .sekcja4 {
+   background-color: rgb(102, 43, 28);
+   height: 150vh;
+  }
+
+  .info {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   height: 70px;
+   width: 100%;
+   box-shadow: 0 0 3px 3px grey;
+   background-color: rgb(200, 200, 200);
+   font-size: 30px;
+   line-height: 70px;
+   text-align: center;
+   bottom: -75px;
+   transition: .8s;
+  }
+
+  .info.active{
+      bottom: 0;
+  }
+
+ </style>
 </head>
+<!-- zmiana tekstów zrobić -->
 
 <body>
 
-    <nav>
-     <a class="me"  href="#">O mnie</a>
-     <a class="portfolio" href="#">Portfolio</a>
-     <a class="offer" href="#">Oferta</a>
-     <a class="contact" href="#">Kontakt</a>
-    </nav>
-   
-    <section data-section="me" id="me" class="s1"></section>
-    <section data-section="portfolio" id="portfolio" class="s2"></section>
-    <section data-section="offer" id="offer" class="s3"></section>
-    <section data-section="contact" id="contact" class="s4"></section>
-   
-    <footer>
-     <p>Stopka</p>
-    </footer>
+ <section class="sekcja1"></section>
+ <section class="sekcja2"></section>
+ <section class="sekcja3"></section>
+ <section class="sekcja4"></section>
+ <div class="info"></div>
 
+ <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+ <script>
 
+     $(window, document).on("scroll", function(){
+        console.log('dziala');
 
-    
-    <script src="https://code.jquery.com/jquery-3.5.0.min.js"
-        integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
-        <script src="start.js"></script>
+        $(".info.active").text("Obecna pozycja scrolla to: " + $(this).scrollTop() + "px");
+
+         if ($(this).scrollTop() > 500 ){
+            $("div.info").addClass("active");
+         }
+
+         else{
+            $("div.info").removeClass("active");
+         }
+     })
+
+ </script>
 </body>
 
 </html>
