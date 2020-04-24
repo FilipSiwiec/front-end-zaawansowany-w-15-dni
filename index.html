@@ -13,7 +13,7 @@
 
   .sekcja1 {
    background-color: rgb(32, 139, 143);
-   height: 100vh;
+   height: 70vh;
   }
 
   .sekcja2 {
@@ -35,7 +35,7 @@
   .info {
    position: fixed;
    left: 0;
-   bottom: 0;
+   top: 0;
    height: 70px;
    width: 100%;
    box-shadow: 0 0 3px 3px grey;
@@ -43,17 +43,9 @@
    font-size: 30px;
    line-height: 70px;
    text-align: center;
-   bottom: -75px;
-   transition: .8s;
   }
-
-  .info.active{
-      bottom: 0;
-  }
-
  </style>
 </head>
-<!-- zmiana tekstów zrobić -->
 
 <body>
 
@@ -61,24 +53,43 @@
  <section class="sekcja2"></section>
  <section class="sekcja3"></section>
  <section class="sekcja4"></section>
- <div class="info"></div>
+ <div class="info">WITAJ NA STRONIE</div>
 
  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
  <script>
 
-     $(window, document).on("scroll", function(){
-        console.log('dziala');
+     function zmiana(){
+        //  console.log($(document).scrollTop());
+         const pozycja = $(document).scrollTop();
 
-        $(".info.active").text("Obecna pozycja scrolla to: " + $(this).scrollTop() + "px");
+         const sek1 = $(".sekcja1").height();
+         const sek2 = $(".sekcja2").height();
+         const sek3 = $(".sekcja3").height();
+         const sek4 = $(".sekcja4").height();
 
-         if ($(this).scrollTop() > 500 ){
-            $("div.info").addClass("active");
-         }
+         const poz1 = $(".sekcja1").offset().top;
+         const poz2 = $(".sekcja2").offset().top;
+         const poz3 = $(".sekcja3").offset().top;
+         const poz4 = $(".sekcja4").offset().top;
+         
+        if ( pozycja < sek1 ){
+         $("div.info").text("sekcja 1");
+        }
 
-         else{
-            $("div.info").removeClass("active");
-         }
-     })
+        else if ( pozycja < sek2 + poz2 ) {
+            $("div.info").text("sekcja 2");
+        }
+
+        else if ( pozycja < sek3 + poz3 ) {
+            $("div.info").text("sekcja 3");
+        }
+
+        else {
+            $("div.info").text("sekcja 4");
+        }
+     }
+
+     $(window).on("scroll", zmiana)
 
  </script>
 </body>
