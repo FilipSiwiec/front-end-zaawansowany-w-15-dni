@@ -55,42 +55,83 @@
  <section class="sekcja4"></section>
  <div class="info">WITAJ NA STRONIE</div>
 
- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+ <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
  <script>
 
-     function zmiana(){
-        //  console.log($(document).scrollTop());
-         const pozycja = $(document).scrollTop();
+    //  function zmiana(){
+        
+    //      const pozycja = $(document).scrollTop();
 
-         const sek1 = $(".sekcja1").height();
-         const sek2 = $(".sekcja2").height();
-         const sek3 = $(".sekcja3").height();
-         const sek4 = $(".sekcja4").height();
+    //      const sek1 = $(".sekcja1").height();
+    //      const sek2 = $(".sekcja2").height();
+    //      const sek3 = $(".sekcja3").height();
+    //      const sek4 = $(".sekcja4").height();
 
-         const poz1 = $(".sekcja1").offset().top;
-         const poz2 = $(".sekcja2").offset().top;
-         const poz3 = $(".sekcja3").offset().top;
-         const poz4 = $(".sekcja4").offset().top;
+    //      const poz1 = $(".sekcja1").offset().top;
+    //      const poz2 = $(".sekcja2").offset().top;
+    //      const poz3 = $(".sekcja3").offset().top;
+    //      const poz4 = $(".sekcja4").offset().top;
          
+    //     if ( pozycja < sek1 ){
+    //      $("div.info").text("sekcja 1");
+    //     }
+
+    //     else if ( pozycja < sek2 + poz2 ) {
+    //         $("div.info").text("sekcja 2");
+    //     }
+
+    //     else if ( pozycja < sek3 + poz3 ) {
+    //         $("div.info").text("sekcja 3");
+    //     }
+
+    //     else {
+    //         $("div.info").text("sekcja 4");
+    //     }
+    //  }
+
+    //  $(window).on("scroll", zmiana) 
+
+    const pozycja = window.scrollY;
+    
+    const zmiana = function(){
+        const pozycja = window.scrollY;
+
+        const sek1 = document.querySelector(".sekcja1").clientHeight;
+        const sek2 = document.querySelector(".sekcja2").clientHeight;
+        const sek3 = document.querySelector(".sekcja3").clientHeight;
+        const sek4 = document.querySelector(".sekcja4").clientHeight;
+
+        const poz1 = document.querySelector(".sekcja1").offsetTop;
+        const poz2 = document.querySelector(".sekcja2").offsetTop;
+        const poz3 = document.querySelector(".sekcja3").offsetTop;
+        const poz4 = document.querySelector(".sekcja4").offsetTop;
+
+        const info = document.querySelector("div.info");
+
         if ( pozycja < sek1 ){
-         $("div.info").text("sekcja 1");
+            
+
+            info.textContent = "sekcja 1";
         }
 
         else if ( pozycja < sek2 + poz2 ) {
-            $("div.info").text("sekcja 2");
+            info.textContent = "sekcja 2";
         }
 
         else if ( pozycja < sek3 + poz3 ) {
-            $("div.info").text("sekcja 3");
+            info.textContent = "sekcja 3";
         }
 
         else {
-            $("div.info").text("sekcja 4");
+            info.textContent = "sekcja 4";
         }
-     }
+        
+    }
 
-     $(window).on("scroll", zmiana)
+    window.addEventListener("scroll", zmiana);
 
+
+     
  </script>
 </body>
 
