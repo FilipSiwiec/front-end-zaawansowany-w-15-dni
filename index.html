@@ -1,138 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 
 <head>
- <meta charset="UTF-8">
- <title>Skrolowanie - efekt w JQ</title>
- <style>
-  * {
-   margin: 0;
-   padding: 0;
-  }
+  <meta charset="UTF-8">
+  <title>Moon Agency | Scroll Animation Effects </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <!-- Import fonta Oswald -->
+  <link href="https://fonts.googleapis.com/css?family=Oswald:400,700&amp;subset=latin-ext" rel="stylesheet">
 
-
-  .sekcja1 {
-   background-color: rgb(32, 139, 143);
-   height: 70vh;
-  }
-
-  .sekcja2 {
-   background-color: rgb(10, 34, 10);
-   height: 500px;
-
-  }
-
-  .sekcja3 {
-   background-color: rgb(167, 46, 106);
-   height: 1290px;
-  }
-
-  .sekcja4 {
-   background-color: rgb(102, 43, 28);
-   height: 150vh;
-  }
-
-  .info {
-   position: fixed;
-   left: 0;
-   top: 0;
-   height: 70px;
-   width: 100%;
-   box-shadow: 0 0 3px 3px grey;
-   background-color: rgb(200, 200, 200);
-   font-size: 30px;
-   line-height: 70px;
-   text-align: center;
-  }
- </style>
 </head>
 
 <body>
 
- <section class="sekcja1"></section>
- <section class="sekcja2"></section>
- <section class="sekcja3"></section>
- <section class="sekcja4"></section>
- <div class="info">WITAJ NA STRONIE</div>
 
- <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
- <script>
+  <nav></nav>
+  <header></header>
 
-    //  function zmiana(){
-        
-    //      const pozycja = $(document).scrollTop();
+  <section class="about">
+    <h1>Moon Agency to:</h1>
+    <article class="art1 clearfix">
+      <h2>Zaangażowanie</h2>
+      <img src="icons/heart.png">
+      <p>Jesteśmy młodym, pełnym zaangażowania i poświęcenia zespołem. Nasza motywacja, to chęć tworzenia
+        najlepszych rozwiązań dla Ciebie i użytkowników aplikacji, które tworzymy.</p>
 
-    //      const sek1 = $(".sekcja1").height();
-    //      const sek2 = $(".sekcja2").height();
-    //      const sek3 = $(".sekcja3").height();
-    //      const sek4 = $(".sekcja4").height();
+    </article>
+    <article class="art2 clearfix">
+      <h2>Wiedza i profesjonalizm</h2>
+      <img src="icons/briefcase.png">
 
-    //      const poz1 = $(".sekcja1").offset().top;
-    //      const poz2 = $(".sekcja2").offset().top;
-    //      const poz3 = $(".sekcja3").offset().top;
-    //      const poz4 = $(".sekcja4").offset().top;
-         
-    //     if ( pozycja < sek1 ){
-    //      $("div.info").text("sekcja 1");
-    //     }
+      <p>Wszyscy członkowie naszego teamu posiadają szerokie doświadczenie w budowaniu nowoczesnych rozwiązań w
+        zakresie web i aplikacji mobilnych. Specjalizujemy się w tworzeniu rozwiązań IoT, grach oraz aplikacjach na
+        urządzenia mobilne.</p>
 
-    //     else if ( pozycja < sek2 + poz2 ) {
-    //         $("div.info").text("sekcja 2");
-    //     }
-
-    //     else if ( pozycja < sek3 + poz3 ) {
-    //         $("div.info").text("sekcja 3");
-    //     }
-
-    //     else {
-    //         $("div.info").text("sekcja 4");
-    //     }
-    //  }
-
-    //  $(window).on("scroll", zmiana) 
-
-    const pozycja = window.scrollY;
-    
-    const zmiana = function(){
-        const pozycja = window.scrollY;
-
-        const sek1 = document.querySelector(".sekcja1").clientHeight;
-        const sek2 = document.querySelector(".sekcja2").clientHeight;
-        const sek3 = document.querySelector(".sekcja3").clientHeight;
-        const sek4 = document.querySelector(".sekcja4").clientHeight;
-
-        const poz1 = document.querySelector(".sekcja1").offsetTop;
-        const poz2 = document.querySelector(".sekcja2").offsetTop;
-        const poz3 = document.querySelector(".sekcja3").offsetTop;
-        const poz4 = document.querySelector(".sekcja4").offsetTop;
-
-        const info = document.querySelector("div.info");
-
-        if ( pozycja < sek1 ){
-            
-
-            info.textContent = "sekcja 1";
-        }
-
-        else if ( pozycja < sek2 + poz2 ) {
-            info.textContent = "sekcja 2";
-        }
-
-        else if ( pozycja < sek3 + poz3 ) {
-            info.textContent = "sekcja 3";
-        }
-
-        else {
-            info.textContent = "sekcja 4";
-        }
-        
-    }
-
-    window.addEventListener("scroll", zmiana);
+    </article>
+    <article class="art3 clearfix">
+      <h2>Perfekcja</h2>
+      <img src="icons/diploma.png">
 
 
-     
- </script>
+
+      <p>Tworząc rozwiązanie dla Ciebie angażujemy potrzebne zasoby programistyczne, ale także kompetencje w zakresie
+        projektowania UI i UX. Efekt końcowy jest sumą dopracoania projektu na każdym jego etpaie i każdej
+        płaszczyźnie.</p>
+
+    </article>
+    <article class="art4 clearfix">
+      <h2>Ciągły wzrost</h2>
+      <img src="icons/plant.png">
+
+
+
+      <p>Jesteśmy dziś profesjonalną agencją, która jednak ciągle się rozwija, ciągle uczy i ciągle stara sie dawać
+        z
+        siebie jeszcze więcej. Nie spoczywama na laurach a każdy projekt jest dla nas nowym wyzwaniem.</p>
+
+    </article>
+  </section>
+  <section class="quotes">
+    <h1>Dlaczego MY</h1>
+    <article class="op1">
+      <img src="img/team.jpg">
+      <p>
+        <span>"Pasja, różnorodne doświadczenie oraz szukanie najlepszych rozwiązań</span> - to klucz
+        do udanych projektów i nasze zasady, którymi kierujemy się przy każdym projekcie dla naszego klienta" - <span>Jan Nowak CEO Moon Agency</span>
+      </p>
+
+
+    </article>
+
+    <article class="op2">
+      <img src="img/team2.jpg">
+      <p>
+        "Wielu klientów przychodzi do nas z projektami, które są kluczowe w rozwoju ich firm. Dlatego <span>całe nasze serce i umiejetności</span>
+        całego zespołu zostawiamy w tich projektach" - <span>Ania Kowalska CTO Moon Agency</span>
+      </p>
+
+    </article>
+  </section>
+
+  <footer>
+    <p>Moon Agency | Tworzymy magiczne rozwiązania w internecie</p>
+  </footer>
+  <script
+  src="https://code.jquery.com/jquery-3.5.0.min.js"
+  integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+  crossorigin="anonymous"></script>
+  <script src="start.js"></script>
 </body>
 
 </html>
