@@ -2,92 +2,194 @@
 <html lang="pl">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Moon Agency | Scroll Animation Effects </title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <!-- Import fonta Oswald -->
-  <link href="https://fonts.googleapis.com/css?family=Oswald:400,700&amp;subset=latin-ext" rel="stylesheet">
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Slider/Banner</title>
+ <link href="https://fonts.googleapis.com/css?family=Oswald&amp;subset=latin-ext" rel="stylesheet">
 
+ <style>
+  * {
+   margin: 0;
+   padding: 0;
+  }
+
+  html {
+   font-family: oswald;
+   font-size: 10px;
+  }
+
+  .team {
+   width: 100%;
+   height: 100vh;
+   overflow: hidden;
+   background-color: #ccc;
+   position: relative;
+  }
+
+  .team img.color {
+   position: absolute;
+   bottom: 0;
+   right: -5%;
+   height: 36%;
+   z-index: 1;
+   animation: color 4s linear infinite;
+  }
+
+  .team img.gray {
+   position: absolute;
+   bottom: 0;
+   left: -70%;
+   height: 110%;
+   opacity: 0.2;
+   animation: gray 4s linear infinite;
+
+  }
+
+  .team .member {
+   position: absolute;
+   top: 10%;
+   left: 0;
+   text-align: center;
+   width: 100%;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+   animation: text 4s linear infinite;
+  }
+
+  .team h1 {
+   font-size: 4rem;
+  }
+
+  .team h2 {
+   font-size: 2.2rem;
+  }
+
+  @media (orientation: landscape) {
+   .team img.color {
+    right: 3%;
+    height: 56%;
+   }
+
+   .team img.gray {
+    bottom: -10%;
+    left: -15%;
+    height: 130%;
+   }
+
+   .team .member {
+    width: 60%;
+    right: 0;
+    left: auto;
+   }
+  }
+
+  @media (min-width: 1025px) {
+   .team h1 {
+    font-size: 8rem;
+   }
+
+   .team h2 {
+    font-size: 5rem;
+   }
+  }
+
+  @keyframes color {
+   0% {
+    transform: translateX(0);
+    opacity: 0;
+   }
+
+   8% {
+    opacity: 0;
+   }
+
+   13% {
+    opacity: 1;
+   }
+
+   87% {
+    opacity: 1;
+   }
+
+   92% {
+    opacity: 0
+   }
+
+   100% {
+    transform: translateX(-5%);
+    opacity: 0;
+   }
+  }
+
+  @keyframes gray {
+   0% {
+    transform: translateX(0) scale(1);
+    opacity: 0;
+   }
+
+   8% {
+    opacity: 0;
+   }
+
+   13% {
+    opacity: .2;
+   }
+
+   87% {
+    opacity: .2;
+   }
+
+   92% {
+    opacity: 0
+   }
+
+   100% {
+    transform: translateX(5%) scale(1.1);
+    opacity: 0;
+   }
+  }
+
+  @keyframes text {
+   0% {
+    transform: scale(1);
+    opacity: 0;
+   }
+
+   8% {
+    opacity: 0;
+   }
+
+   13% {
+    opacity: 1;
+   }
+
+   87% {
+    opacity: 1;
+   }
+
+   92% {
+    opacity: 0
+   }
+
+   100% {
+    transform: scale(1.1);
+    opacity: 0;
+   }
+  }
+ </style>
 </head>
 
 <body>
+ <section class="team">
+  <img src="./img/s1.png" alt="dziewczyna 1 kolor" class="color">
+  <img src="./img/s1a.png" alt="dziewczyna 1 szara" class="gray">
+  <div class="member">
+   <h1>Anna Baugart</h1>
+   <h2>Programistka JS</h2>
+  </div>
 
-
-  <nav></nav>
-  <header></header>
-
-  <section class="about">
-    <h1>Moon Agency to:</h1>
-    <article class="art1 clearfix">
-      <h2>Zaangażowanie</h2>
-      <img src="icons/heart.png">
-      <p>Jesteśmy młodym, pełnym zaangażowania i poświęcenia zespołem. Nasza motywacja, to chęć tworzenia
-        najlepszych rozwiązań dla Ciebie i użytkowników aplikacji, które tworzymy.</p>
-
-    </article>
-    <article class="art2 clearfix">
-      <h2>Wiedza i profesjonalizm</h2>
-      <img src="icons/briefcase.png">
-
-      <p>Wszyscy członkowie naszego teamu posiadają szerokie doświadczenie w budowaniu nowoczesnych rozwiązań w
-        zakresie web i aplikacji mobilnych. Specjalizujemy się w tworzeniu rozwiązań IoT, grach oraz aplikacjach na
-        urządzenia mobilne.</p>
-
-    </article>
-    <article class="art3 clearfix">
-      <h2>Perfekcja</h2>
-      <img src="icons/diploma.png">
-
-
-
-      <p>Tworząc rozwiązanie dla Ciebie angażujemy potrzebne zasoby programistyczne, ale także kompetencje w zakresie
-        projektowania UI i UX. Efekt końcowy jest sumą dopracoania projektu na każdym jego etpaie i każdej
-        płaszczyźnie.</p>
-
-    </article>
-    <article class="art4 clearfix">
-      <h2>Ciągły wzrost</h2>
-      <img src="icons/plant.png">
-
-
-
-      <p>Jesteśmy dziś profesjonalną agencją, która jednak ciągle się rozwija, ciągle uczy i ciągle stara sie dawać
-        z
-        siebie jeszcze więcej. Nie spoczywama na laurach a każdy projekt jest dla nas nowym wyzwaniem.</p>
-
-    </article>
-  </section>
-  <section class="quotes">
-    <h1>Dlaczego MY</h1>
-    <article class="op1">
-      <img src="img/team.jpg">
-      <p>
-        <span>"Pasja, różnorodne doświadczenie oraz szukanie najlepszych rozwiązań</span> - to klucz
-        do udanych projektów i nasze zasady, którymi kierujemy się przy każdym projekcie dla naszego klienta" - <span>Jan Nowak CEO Moon Agency</span>
-      </p>
-
-
-    </article>
-
-    <article class="op2">
-      <img src="img/team2.jpg">
-      <p>
-        "Wielu klientów przychodzi do nas z projektami, które są kluczowe w rozwoju ich firm. Dlatego <span>całe nasze serce i umiejetności</span>
-        całego zespołu zostawiamy w tich projektach" - <span>Ania Kowalska CTO Moon Agency</span>
-      </p>
-
-    </article>
-  </section>
-
-  <footer>
-    <p>Moon Agency | Tworzymy magiczne rozwiązania w internecie</p>
-  </footer>
-  <script
-  src="https://code.jquery.com/jquery-3.5.0.min.js"
-  integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
-  crossorigin="anonymous"></script>
-  <script src="start.js"></script>
+ </section>
 </body>
 
 </html>
