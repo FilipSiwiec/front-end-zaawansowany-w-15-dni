@@ -190,6 +190,36 @@
   </div>
 
  </section>
+
+ <script >
+     let active = 1;
+
+     const imgColor = ["./img/s1.png", "./img/s2.png", "./img/s3.png"];
+     const imgGray = ["./img/s1a.png", "./img/s2a.png", "./img/s3a.png"];
+     const names = ['Anna Baugart', 'Marek Feliksiak', 'Arek Pawłowicz'];
+     const professions = ['Programistka JS', 'UX i UI Designer', 'Front-End Developer'];
+
+     const AimgColor = document.querySelector('.color');
+     const AimgGray = document.querySelector('.gray');
+     const memberH1 = document.querySelector(".member h1");
+     const memberH2 = document.querySelector(".member h2");
+
+    function dziala (){
+        console.log("dzial");
+        AimgColor.src = imgColor[active];
+        AimgGray.src = imgGray[active];
+        memberH1.textContent = names[active];
+        memberH2.textContent = professions[active];
+        active++;
+
+        if(active == imgColor.length){
+            active = 0;
+        }
+    }
+
+    setInterval(dziala, 4000);
+     
+ </script>
 </body>
 
 </html>
